@@ -1,0 +1,19 @@
+Feature: Registro, autenticación y gestión de perfil de usuarios
+
+#US01: Registro de cuenta como deportista
+
+#Scenario 1: Registro exitoso de deportista
+
+Given que el deportista se encuentra en la pantalla de registro
+And el sistema muestra los campos: nombre, correo, contraseña, tipo de lesión y fecha de lesión
+When el deportista completa todos los campos obligatorios y presiona "Crear cuenta"
+Then el sistema valida los datos ingresados
+And crea la cuenta exitosamente
+And redirige al deportista a su perfil inicial con el mensaje "Cuenta creada con éxito"
+
+#Scenario 2: Registro fallido por correo duplicado
+
+Given que el deportista intenta registrarse con un correo ya existente
+When presiona "Crear cuenta"
+Then el sistema muestra el mensaje de error "El correo ya está registrado"
+And no permite continuar hasta ingresar un correo diferente
