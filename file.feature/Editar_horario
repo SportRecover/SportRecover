@@ -1,0 +1,18 @@
+
+#Historia de usuario 15
+
+Feature: Editar sesiones del terapeuta
+
+#Primer escenario
+
+Scenario: Modificar mi horario como terapeuta
+When: Interactúo con el ícono de configuración.
+Then: El sistema me llevará al apartado de edición del horario.
+And: Se mostrarán las diferentes opciones para modificar mi horario.
+
+#Segundo escenario
+
+Scenario: Guardar la modificación de mi horario
+When: Realizo los cambios correspondientes a mi horario.
+And: Interactúo con el botón "Guardar".
+Then: El sistema guardará los cambios y me redirigirá a la pestaña de mi horario mostrando las modificaciones realizadas.
