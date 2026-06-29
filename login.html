@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SportRecover</title>
-    <link rel="stylesheet" href="public/assets/styles/styleLogin.css" />
+    <title>SportRecover - Iniciar Sesión</title>
+    <link rel="stylesheet" href="stylesLogin.css" />
 </head>
 <body>
 
@@ -17,55 +17,50 @@
             <li><a href="">Inicio</a></li>
             <li><a href="">Servicios</a></li>
             <li><a href="">Fisioterapeutas</a></li>
-            <li><a href="#registro">Regístrate</a></li>
+            <li><a href="index.html">Regístrate</a></li>
         </ul>
     </nav>
 
-    <section class="seccion_registro" id="registro">
-        <div class="cont-gral-registro">
+    <section class="seccion_login">
+        <div class="cont-gral-login">
+
+            <div class="cont-imagen">
+                <img src="images/atleta.jpg" alt="Atleta SportRecover">
+            </div>
 
             <div class="cont-formulario">
-                <div class="logo-registro">
+                <div class="logo-login">
                     <img height="40" src="images/logo.png" alt="logo SportRecover">
                 </div>
 
-                <h2>Crea tu <span class="texto-verde">cuenta</span></h2>
-                <p class="subtitulo">Únete y empieza tu proceso de rehabilitación de forma inteligente y personalizada</p>
+                <h2>Bienvenido <span class="texto-verde">de vuelta</span></h2>
+                <p class="subtitulo">Inicia sesión para continuar con tu proceso de rehabilitación</p>
 
-                <form class="formulario" id="registroForm">
-                    <div class="campo">
-                        <input type="text" placeholder="Nombre completo" />
-                    </div>
-
+                <form class="formulario" id="loginForm">
                     <div class="campo">
                         <input type="email" placeholder="Correo electrónico" />
                     </div>
 
                     <div class="campo">
                         <input type="password" placeholder="Contraseña" />
-                        <span class="hint">Mínimo 8 caracteres con números y letras</span>
                     </div>
 
                     <div class="campo-check">
-                        <input type="checkbox" id="terminos" />
-                        <label for="terminos">Acepto los <a href="#">Términos de Servicio</a> y la <a href="#">Política de Privacidad</a></label>
+                        <input type="checkbox" id="recordar" />
+                        <label for="recordar">Recordarme</label>
                     </div>
 
-                    <button type="submit" class="btn-crear">Crear cuenta</button>
+                    <button type="submit" class="btn-login">Iniciar Sesión</button>
                 </form>
 
                 <p class="separador">o continúa con</p>
 
                 <button class="btn-google">
                     <img src="https://www.google.com/favicon.ico" width="18" alt="Google">
-                    Sign up with Google
+                    Sign in with Google
                 </button>
 
-                <p class="iniciar-sesion">¿Ya tienes una cuenta? <a href="#">Iniciar Sesión</a></p>
-            </div>
-
-            <div class="cont-imagen">
-                <img src="images/atleta.jpg" alt="Atleta SportRecover">
+                <p class="registrate">¿No tienes una cuenta? <a href="index.html">Crear cuenta</a></p>
             </div>
 
         </div>
@@ -73,9 +68,7 @@
 
     <footer class="seccion-footer">
         <div class="cont-gral-footer">
-            <div class="footer-copy">
-                <p>@2026 SportRecover. Todos los derechos reservados.</p>
-            </div>
+            <p>@2026 SportRecover. Todos los derechos reservados.</p>
         </div>
     </footer>
 
