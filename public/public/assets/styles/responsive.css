@@ -1,6 +1,12 @@
 ﻿/* ================================================
-   RESPONSIVE STYLES - SportRecover
+   RESPONSIVE STYLES - SportRecover (Final Version)
    ================================================ */
+
+/* --- Regla general para evitar desbordes en móviles --- */
+img, picture, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+}
 
 /* --- Pantallas grandes (min-width: 1100px) --- */
 @media (min-width: 1100px) {
@@ -27,7 +33,6 @@
 
 /* --- Tablet / Pantallas medianas (max-width: 900px) --- */
 @media (max-width: 900px) {
-
     /* Navbar */
     .barra-nav {
         grid-template-columns: auto 1fr auto;
@@ -147,10 +152,6 @@
         min-width: auto;
         max-width: 100%;
     }
-    .registro__imagen img {
-        width: 100%;
-        height: auto;
-    }
     .caja-formulario__titulo {
         font-size: 2.2rem;
     }
@@ -190,7 +191,6 @@
 
 /* --- Movil (max-width: 600px) --- */
 @media (max-width: 600px) {
-
     /* Navbar */
     .barra-nav {
         padding: 0.5rem 1rem;
@@ -236,7 +236,7 @@
         font-size: 0.95rem;
     }
 
-    /* Purpose / Nosotros — banners al mismo tamaño */
+    /* Purpose / Nosotros */
     .proposito__encabezado,
     .nosotros__encabezado {
         padding: 2rem 1rem;
@@ -250,9 +250,6 @@
     }
     .proposito__tarjeta h3 {
         font-size: 1.6rem;
-    }
-    .proposito__tarjeta p {
-        font-size: 0.95rem;
     }
 
     /* Cards / Testimonials */
@@ -278,7 +275,6 @@
     .testimonio__cuerpo img {
         width: 100%;
         max-width: 280px;
-        height: auto;
     }
     .testimonio__detalle {
         padding: 2rem;
@@ -310,6 +306,8 @@
     .caja-formulario__titulo {
         font-size: 2rem;
     }
+    
+    /* Tipografías móviles */
     .caja-formulario__subtitulo,
     .formulario__pie-enlace,
     .formulario__casilla label,
