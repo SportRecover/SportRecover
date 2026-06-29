@@ -1,0 +1,324 @@
+﻿/* ================================================
+   RESPONSIVE STYLES - SportRecover
+   ================================================ */
+
+/* --- Pantallas grandes (min-width: 1100px) --- */
+@media (min-width: 1100px) {
+    .principal {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 1rem;
+    }
+
+    .principal__contenido {
+        max-width: 55%;
+        padding-left: 4rem;
+    }
+
+    .principal__imagen {
+        max-width: 45%;
+    }
+
+    .principal__imagen img {
+        max-width: 640px;
+        border-radius: 12px;
+    }
+}
+
+/* --- Tablet / Pantallas medianas (max-width: 900px) --- */
+@media (max-width: 900px) {
+
+    /* Navbar */
+    .barra-nav {
+        grid-template-columns: auto 1fr auto;
+        padding: 0.6rem 1rem;
+        gap: 1rem;
+        position: relative;
+    }
+    .barra-nav__menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        display: none;
+        border-bottom: 1px solid #eaeaea;
+        z-index: 999;
+    }
+    .barra-nav.abierto .barra-nav__menu {
+        display: flex;
+    }
+    .barra-nav__boton {
+        display: flex;
+        justify-self: end;
+        position: relative;
+    }
+    .barra-nav__logo {
+        padding-left: 0.5rem;
+    }
+
+    /* Hero */
+    .principal {
+        flex-wrap: wrap;
+        padding: 1.5rem 1rem;
+    }
+    .principal__contenido {
+        max-width: 100%;
+        min-width: 0;
+        padding: 1rem;
+    }
+    .principal__imagen {
+        max-width: 100%;
+        min-width: 0;
+        width: 100%;
+        padding: 0 1rem 1rem 1rem;
+    }
+    .principal__titulo {
+        font-size: 3rem;
+    }
+    .principal__subtitulo {
+        font-size: 1.1rem;
+    }
+    .principal__caracteristicas {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.25rem;
+    }
+    .caracteristica {
+        width: 100%;
+        max-width: 420px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1rem;
+        padding: 0.5rem 0;
+    }
+    .caracteristica__caja {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 0;
+    }
+    .caracteristica__texto {
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    /* Purpose */
+    .proposito__cuadricula {
+        grid-template-columns: 1fr;
+    }
+    .proposito__tarjeta {
+        flex-direction: column;
+        text-align: center;
+    }
+    .proposito__tarjeta h3 {
+        font-size: 1.8rem;
+    }
+
+    /* Offers */
+    .ofertas__cuadricula {
+        gap: 1.5rem;
+    }
+    .oferta__tarjeta-nueva {
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    /* Register */
+    .seccion-registro {
+        padding: 2.5rem 1.5rem;
+    }
+    .registro__contenedor {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .caja-formulario__seccion {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    .registro__imagen {
+        width: 100%;
+        min-width: auto;
+        max-width: 100%;
+    }
+    .registro__imagen img {
+        width: 100%;
+        height: auto;
+    }
+    .caja-formulario__titulo {
+        font-size: 2.2rem;
+    }
+
+    /* Hero Index */
+    .principal--inicio {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .principal--inicio .principal__contenido {
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+    }
+    .principal__imagen--derecha {
+        max-width: 100%;
+        height: 50vw;
+        min-height: 240px;
+    }
+    .principal--inicio .principal__titulo--inicio {
+        font-size: 2.8rem;
+    }
+
+    /* Register Split */
+    .seccion-registro--dividida {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .registro__panel-formulario {
+        flex: none;
+        max-width: 100%;
+        padding: 2.5rem 1.5rem;
+    }
+    .registro__panel-imagen {
+        height: 280px;
+    }
+}
+
+/* --- Movil (max-width: 600px) --- */
+@media (max-width: 600px) {
+
+    /* Navbar */
+    .barra-nav {
+        padding: 0.5rem 1rem;
+        grid-template-columns: auto 1fr auto;
+    }
+    .barra-nav__menu {
+        gap: 0.75rem;
+        padding: 0.75rem 0;
+    }
+    .barra-nav__enlace {
+        font-size: 0.85rem;
+        padding: 0.35rem 0.25rem;
+    }
+    .boton-nav {
+        padding: 0.35rem 0.85rem;
+    }
+
+    /* Hero */
+    .principal__titulo {
+        font-size: 2.4rem;
+    }
+    .principal__subtitulo {
+        font-size: 1rem;
+    }
+    .boton-primario {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+    .principal__caracteristicas {
+        gap: 1rem;
+    }
+    .caracteristica {
+        width: 100%;
+        max-width: 100%;
+        padding: 0.75rem 0;
+        gap: 0.85rem;
+    }
+    .caracteristica__caja {
+        width: 68px;
+        height: 68px;
+    }
+    .caracteristica__texto {
+        font-size: 0.95rem;
+    }
+
+    /* Purpose / Nosotros — banners al mismo tamaño */
+    .proposito__encabezado,
+    .nosotros__encabezado {
+        padding: 2rem 1rem;
+    }
+    .proposito__encabezado h2,
+    .nosotros__encabezado h2 {
+        font-size: 2.4rem;
+    }
+    .proposito__tarjeta {
+        padding: 1.5rem;
+    }
+    .proposito__tarjeta h3 {
+        font-size: 1.6rem;
+    }
+    .proposito__tarjeta p {
+        font-size: 0.95rem;
+    }
+
+    /* Cards / Testimonials */
+    .oferta__tarjeta,
+    .oferta__tarjeta-nueva,
+    .testimonio__tarjeta,
+    .testimonio__cuerpo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .oferta__tarjeta,
+    .oferta__tarjeta-nueva {
+        padding: 2rem 1.5rem;
+        max-width: 100%;
+    }
+    .testimonio__tarjeta {
+        gap: 1rem;
+    }
+    .testimonio__cuerpo {
+        gap: 1.5rem;
+    }
+    .testimonio__cuerpo img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+    .testimonio__detalle {
+        padding: 2rem;
+    }
+
+    /* Contact */
+    .seccion-contacto {
+        padding: 3rem 1rem;
+    }
+    .contacto__redes {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .contacto__titulo {
+        font-size: 2.5rem;
+    }
+    .contacto__subtitulo {
+        font-size: 1.2rem;
+    }
+
+    /* Register */
+    .seccion-registro {
+        padding: 2rem 1rem;
+    }
+    .registro__imagen {
+        width: 100%;
+        min-width: auto;
+    }
+    .caja-formulario__titulo {
+        font-size: 2rem;
+    }
+    .caja-formulario__subtitulo,
+    .formulario__pie-enlace,
+    .formulario__casilla label,
+    .caracteristica__texto,
+    .oferta__tarjeta p,
+    .oferta__tarjeta-nueva p,
+    .testimonios__subtitulo,
+    .testimonios__titulo,
+    .proposito__tarjeta p {
+        font-size: 0.95rem;
+    }
+}
