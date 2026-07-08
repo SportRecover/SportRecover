@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Completa tu perfil médico</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <h2 style="text-align:center;font-size:1.4rem;font-weight:800;margin-bottom:1.5rem;">Completa tu perfil médico</h2>
+
+            <!-- Steps -->
+            <div class="pasos-indicador">
+                <div class="paso-indicador paso-indicador--completado">
+                    <div class="paso__circulo">✓</div>
+                    <span class="paso__label">Datos personales</span>
+                </div>
+                <div class="paso-indicador paso-indicador--activo">
+                    <div class="paso__circulo">2</div>
+                    <span class="paso__label">Documentos</span>
+                </div>
+                <div class="paso-indicador">
+                    <div class="paso__circulo">3</div>
+                    <span class="paso__label">Confirmación</span>
+                </div>
+            </div>
+
+            <p style="text-align:center;font-size:.9rem;color:var(--body-text);margin-bottom:2rem;">
+                Sube tus documentos para que podamos generar un plan adecuado para ti.
+            </p>
+
+            <!-- Diagnóstico -->
+            <div class="tarjeta-documento">
+                <div class="documento__header">
+                    <span class="documento__icono">📄</span>
+                    <div>
+                        <div class="documento__titulo">Diagnóstico médico</div>
+                        <div class="documento__desc">Sube tu diagnóstico en formato PDF.</div>
+                    </div>
+                </div>
+                <button class="boton-subir" onclick="document.getElementById('pdfInput').click()">
+                    ⬆ Subir PDF
+                </button>
+                <input id="pdfInput" type="file" accept=".pdf" hidden>
+            </div>
+
+            <!-- Radiografía -->
+            <div class="tarjeta-documento">
+                <div class="documento__header">
+                    <span class="documento__icono">🖼️</span>
+                    <div>
+                        <div class="documento__titulo">Radiografía / Imagen</div>
+                        <div class="documento__desc">Sube tus radiografías o imágenes médicas.</div>
+                    </div>
+                </div>
+                <button class="boton-subir" onclick="document.getElementById('imgInput').click()">
+                    ⬆ Subir imagen
+                </button>
+                <input id="imgInput" type="file" accept="image/*" hidden>
+            </div>
+
+            <div style="margin-top:1.5rem">
+                <a href="bienvenida.html" class="boton-app boton-app--primario">Continuar →</a>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>

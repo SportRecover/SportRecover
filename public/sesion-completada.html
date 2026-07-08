@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Sesión completada</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <div class="app-cabecera">
+                <a href="rutina.html" class="boton-volver">←</a>
+                <h1 class="app-cabecera__titulo">Sesión completada</h1>
+            </div>
+
+            <div class="pantalla-exito">
+                <div class="exito__confeti">🎉 · · · 🎊 · · · 🎉</div>
+                <div class="exito__circulo">✓</div>
+                <h2 class="exito__titulo">¡Excelente trabajo!</h2>
+                <p class="exito__subtitulo">Has completado tu rutina de hoy</p>
+            </div>
+
+            <div class="stats-sesion">
+                <div class="stat-sesion">
+                    <div class="stat-sesion__label">Ejercicio</div>
+                    <div class="stat-sesion__valor">5</div>
+                </div>
+                <div class="stat-sesion">
+                    <div class="stat-sesion__label">Series totales</div>
+                    <div class="stat-sesion__valor">15</div>
+                </div>
+                <div class="stat-sesion">
+                    <div class="stat-sesion__label">Repeticiones</div>
+                    <div class="stat-sesion__valor">72</div>
+                </div>
+                <div class="stat-sesion">
+                    <div class="stat-sesion__label">Tiempo total</div>
+                    <div class="stat-sesion__valor">28:45</div>
+                </div>
+            </div>
+
+            <!-- Progreso semanal -->
+            <div class="tarjeta">
+                <div style="font-weight:700;font-size:.95rem;margin-bottom:.75rem;">Tu progreso semanal</div>
+                <div class="barra-progreso">
+                    <div class="barra-progreso__relleno" style="width:60%"></div>
+                </div>
+                <div style="font-size:.82rem;color:#888;margin-top:.4rem;">3 / 5 sesiones</div>
+            </div>
+
+            <div style="margin-top:1.5rem">
+                <a href="esfuerzo.html" class="boton-app boton-app--primario">Siguiente →</a>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>

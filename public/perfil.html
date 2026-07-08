@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Mi Perfil</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <div class="app-cabecera">
+                <a href="inicio-app.html" class="boton-volver">←</a>
+                <h1 class="app-cabecera__titulo">Perfil</h1>
+            </div>
+
+            <!-- Avatar -->
+            <div class="avatar-perfil">
+                <img src="assets/images/manuel.png" alt="Juan Perez">
+                <button class="avatar-perfil__boton" title="Cambiar foto">📷</button>
+            </div>
+
+            <!-- Campos -->
+            <div class="campo-perfil">
+                <div class="campo-perfil__etiqueta">Nombre</div>
+                <div class="campo-perfil__valor">Juan Perez</div>
+            </div>
+            <div class="campo-perfil">
+                <div class="campo-perfil__etiqueta">Correo electrónico</div>
+                <div class="campo-perfil__valor">juanperez@gmail.com</div>
+            </div>
+            <div class="campo-perfil">
+                <div class="campo-perfil__etiqueta">Teléfono</div>
+                <div class="campo-perfil__valor">987 654 321</div>
+            </div>
+            <div class="campo-perfil">
+                <div class="campo-perfil__etiqueta">Fecha de nacimiento</div>
+                <div class="campo-perfil__valor">15 / 05 / 1996</div>
+            </div>
+            <div class="campo-perfil">
+                <div class="campo-perfil__etiqueta">Deporte</div>
+                <div class="campo-perfil__valor">Fútbol</div>
+            </div>
+            <div class="campos-dobles">
+                <div class="campo-perfil">
+                    <div class="campo-perfil__etiqueta">Peso</div>
+                    <div class="campo-perfil__valor">72 kg</div>
+                </div>
+                <div class="campo-perfil">
+                    <div class="campo-perfil__etiqueta">Estatura</div>
+                    <div class="campo-perfil__valor">1.78 m</div>
+                </div>
+            </div>
+
+            <div style="margin-top:1.5rem">
+                <a href="perfil-medico.html" class="boton-app boton-app--secundario" style="color:var(--primary-green);border-color:var(--primary-green)">Editar perfil</a>
+            </div>
+            <div style="margin-top:.75rem">
+                <a href="login.html" class="boton-app boton-app--secundario" style="color:#d32f2f;border-color:#fde0e0">Cerrar sesión</a>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>

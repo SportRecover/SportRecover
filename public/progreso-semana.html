@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Progreso de la semana</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="cuerpo-azul">
+
+    <div class="menu-lateral-overlay" id="menuOverlay" onclick="cerrarMenu()"></div>
+    <nav class="menu-lateral" id="menuLateral">
+        <ul class="menu-lateral__lista">
+            <li><button class="menu-lateral__item" onclick="mostrarModalNoFuncional()">Reporte de molestias</button></li>
+            <li><a href="fisioterapeutas.html" class="menu-lateral__item" onclick="cerrarMenu()">Fisioterapeuta</a></li>
+            <li><a href="chat.html" class="menu-lateral__item" onclick="cerrarMenu()">Chat fisioterapeuta</a></li>
+            <li><a href="progreso-semanal.html" class="menu-lateral__item menu-lateral__item--activo">Mi progreso</a></li>
+            <li><a href="historial.html" class="menu-lateral__item" onclick="cerrarMenu()">Historial de síntomas</a></li>
+            <li><button class="menu-lateral__item" onclick="mostrarModalProfesional()">Registro profesionales</button></li>
+            <li><button class="menu-lateral__item menu-lateral__item--ayuda" onclick="cerrarMenu()">Ayuda</button></li>
+        </ul>
+    </nav>
+
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <button class="barra-nav__boton" aria-label="Abrir menú" onclick="abrirMenu()">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <img src="assets/images/logo.png" alt="SportRecover" class="barra-nav__logo">
+            <span class="barra-nav__usuario">
+                Usuario
+                <span class="barra-nav__avatar-icono">👤</span>
+            </span>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <h1 style="font-size:2rem;font-weight:900;color:#111;margin-bottom:1.5rem;">Progreso de la semana</h1>
+
+            <!-- Tabs Día / Mes -->
+            <div style="display:flex;gap:.6rem;margin-bottom:1rem;">
+                <button class="pestana" id="tabDia" onclick="cambiarTab('dia')"
+                    style="background:#1a3a8a;color:#fff;border-radius:8px;padding:.55rem 1.5rem;">Dia</button>
+                <button class="pestana" id="tabMes" onclick="cambiarTab('mes')"
+                    style="background:var(--primary-green);color:#fff;border-radius:8px;padding:.55rem 1.5rem;">Mes</button>
+            </div>
+            <hr style="border:none;border-top:1.5px solid rgba(0,0,0,0.15);margin-bottom:1.5rem;">
+
+            <!-- Panel Día -->
+            <div id="panelDia" style="display:none">
+                <div class="grupo-dia-ejercicios">
+                    <div class="grupo-dia__titulo">Lunes</div>
+                    <div class="tarjeta-ejercicio-dia">
+                        <div class="tarjeta-ejercicio-dia__nombre">Ejercicio de flexibilidad</div>
+                        <div class="tarjeta-ejercicio-dia__desc">Realizar una ruta de trote de 10 kilómetros con recesos de 5 minutos durante el recorrido.</div>
+                    </div>
+                </div>
+                <div class="grupo-dia-ejercicios">
+                    <div class="grupo-dia__titulo">Martes</div>
+                    <div class="tarjeta-ejercicio-dia">
+                        <div class="tarjeta-ejercicio-dia__nombre">Ejercicio de flexibilidad</div>
+                        <div class="tarjeta-ejercicio-dia__desc">Ejercicios de elevacion suave de la pierna, estiramientos de cuádriceps y movilidad de rodilla sen...</div>
+                    </div>
+                </div>
+                <div class="grupo-dia-ejercicios">
+                    <div class="grupo-dia__titulo">Miércoles</div>
+                    <div class="tarjeta-ejercicio-dia">
+                        <div class="tarjeta-ejercicio-dia__nombre">Movilidad articular</div>
+                        <div class="tarjeta-ejercicio-dia__desc">Rotaciones de cadera y hombros, estiramiento de isquiotibiales y trabajo de equilibrio.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel Mes (con buscador y filtros) -->
+            <div id="panelMes">
+                <!-- Buscador -->
+                <div class="buscador-ejercicios">
+                    <div class="buscador-input-wrap">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <circle cx="7.5" cy="7.5" r="6" stroke="#888" stroke-width="2"/>
+                            <line x1="12" y1="12" x2="17" y2="17" stroke="#888" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <input type="text" id="busquedaInput" placeholder="Buscar ejercicio (ej. sentadilla, flexibilidad, trote...)"
+                               oninput="filtrarEjercicios(this.value)">
+                        <button class="buscador-clear" onclick="limpiarBusqueda()" title="Limpiar">✕</button>
+                    </div>
+                    <button class="filtros-btn" onclick="toggleFiltros()">
+                        <svg width="14" height="12" viewBox="0 0 14 12" fill="none">
+                            <path d="M1 1h12M3 6h8M5 11h4" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Filtros ▾
+                    </button>
+                </div>
+
+                <!-- Panel de filtros -->
+                <div class="filtros-panel" id="filtrosPanel">
+                    <button class="filtro-dropdown-btn">Grupo muscular ▾</button>
+                    <button class="filtro-dropdown-btn">Tipo de ejercicio ▾</button>
+                </div>
+
+                <!-- Resultados de búsqueda (dropdown) -->
+                <div class="resultados-busqueda" id="resultadosBusqueda">
+                    <div class="resultado-ejercicio" onclick="seleccionarEjercicio('Trabajo de piernas')">
+                        <span class="resultado-ejercicio__icono">🦵</span>
+                        <span>Trabajo de piernas</span>
+                    </div>
+                    <div class="resultado-ejercicio" onclick="seleccionarEjercicio('Estiramiento de cuádriceps')">
+                        <span class="resultado-ejercicio__icono">🏃</span>
+                        <span>Estiramiento de cuádriceps</span>
+                    </div>
+                    <div class="resultado-ejercicio" onclick="seleccionarEjercicio('Sentadilla')">
+                        <span class="resultado-ejercicio__icono">🦵</span>
+                        <span>Sentadilla</span>
+                    </div>
+                    <div class="resultado-ejercicio" onclick="seleccionarEjercicio('Flexibilidad de rodilla')">
+                        <span class="resultado-ejercicio__icono">🤸</span>
+                        <span>Flexibilidad de rodilla</span>
+                    </div>
+                </div>
+
+                <!-- Lista de ejercicios por día -->
+                <div id="listaEjercicios">
+                    <div class="grupo-dia-ejercicios">
+                        <div class="grupo-dia__titulo">Lunes</div>
+                        <div class="tarjeta-ejercicio-dia">
+                            <div class="tarjeta-ejercicio-dia__nombre">Ejercicio de flexibilidad</div>
+                            <div class="tarjeta-ejercicio-dia__desc">Realizar una ruta de trote de 10 kilómetros con recesos de 5 minutos durante el recorrido.</div>
+                        </div>
+                    </div>
+                    <div class="grupo-dia-ejercicios">
+                        <div class="grupo-dia__titulo">Martes</div>
+                        <div class="tarjeta-ejercicio-dia">
+                            <div class="tarjeta-ejercicio-dia__nombre">Ejercicio de flexibilidad</div>
+                            <div class="tarjeta-ejercicio-dia__desc">Ejercicios de elevacion suave de la pierna, estiramientos de cuádriceps y movilidad de rodilla sen...</div>
+                        </div>
+                    </div>
+                    <div class="grupo-dia-ejercicios">
+                        <div class="grupo-dia__titulo">Miércoles</div>
+                        <div class="tarjeta-ejercicio-dia">
+                            <div class="tarjeta-ejercicio-dia__nombre">Trabajo de piernas</div>
+                            <div class="tarjeta-ejercicio-dia__desc">Sentadillas, extensiones y trabajo de cuádriceps con banda elástica de resistencia media.</div>
+                        </div>
+                    </div>
+                    <div class="grupo-dia-ejercicios">
+                        <div class="grupo-dia__titulo">Jueves</div>
+                        <div class="tarjeta-ejercicio-dia">
+                            <div class="tarjeta-ejercicio-dia__nombre">Estiramiento de cuádriceps</div>
+                            <div class="tarjeta-ejercicio-dia__desc">Estiramiento estático y dinámico del cuádriceps, 3 series de 30 segundos por pierna.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal: opción no funcional -->
+    <div class="modal-overlay" id="modalNoFuncional" style="display:none;align-items:center;justify-content:center">
+        <div class="modal-alerta">
+            <h3 class="modal-alerta__titulo">Opción no funcional</h3>
+            <div class="modal-alerta__icono">⚠️</div>
+            <p class="modal-alerta__texto">No a realizado ninguna consulta, porfavor dirigase a la pestaña principal</p>
+            <button class="boton-alerta boton-alerta--verde" onclick="cerrarModalNoFuncional()">IR</button>
+        </div>
+    </div>
+
+    <!-- Modal: registro profesional -->
+    <div class="modal-overlay" id="modalProfesional" style="display:none;align-items:center;justify-content:center">
+        <div class="modal-alerta">
+            <h3 class="modal-alerta__titulo">Opción seleccionada "Registro profesional"</h3>
+            <div class="modal-alerta__icono">⚠️</div>
+            <p class="modal-alerta__texto">Esta opcion esta apartada para profesionales medicos fisioterapeutas. ¿Estas seguro de seguir?</p>
+            <div class="modal-alerta__botones">
+                <button class="boton-alerta boton-alerta--verde" onclick="cerrarModalProfesional()">NO</button>
+                <button class="boton-alerta boton-alerta--azul" onclick="window.location.href='registro.html'">SI</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="progreso-semanal.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace" onclick="abrirMenu();return false;">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+    <script>
+        /* ── Menú lateral ── */
+        function abrirMenu() {
+            document.getElementById('menuLateral').classList.add('abierto');
+            document.getElementById('menuOverlay').classList.add('activo');
+        }
+        function cerrarMenu() {
+            document.getElementById('menuLateral').classList.remove('abierto');
+            document.getElementById('menuOverlay').classList.remove('activo');
+        }
+        function mostrarModalNoFuncional() {
+            cerrarMenu();
+            document.getElementById('modalNoFuncional').style.display = 'flex';
+        }
+        function cerrarModalNoFuncional() { document.getElementById('modalNoFuncional').style.display = 'none'; }
+        function mostrarModalProfesional() {
+            cerrarMenu();
+            document.getElementById('modalProfesional').style.display = 'flex';
+        }
+        function cerrarModalProfesional() { document.getElementById('modalProfesional').style.display = 'none'; }
+
+        /* ── Tabs Día / Mes ── */
+        function cambiarTab(tab) {
+            const esDia = tab === 'dia';
+            document.getElementById('panelDia').style.display = esDia ? 'block' : 'none';
+            document.getElementById('panelMes').style.display = esDia ? 'none'  : 'block';
+        }
+
+        /* ── Buscador ── */
+        function filtrarEjercicios(valor) {
+            const resultados = document.getElementById('resultadosBusqueda');
+            if (valor.trim().length > 0) {
+                resultados.classList.add('visible');
+                const items = resultados.querySelectorAll('.resultado-ejercicio');
+                items.forEach(item => {
+                    const texto = item.querySelector('span:last-child').textContent.toLowerCase();
+                    item.style.display = texto.includes(valor.toLowerCase()) ? 'flex' : 'none';
+                });
+            } else {
+                resultados.classList.remove('visible');
+            }
+        }
+
+        function limpiarBusqueda() {
+            document.getElementById('busquedaInput').value = '';
+            document.getElementById('resultadosBusqueda').classList.remove('visible');
+        }
+
+        function seleccionarEjercicio(nombre) {
+            document.getElementById('busquedaInput').value = nombre;
+            document.getElementById('resultadosBusqueda').classList.remove('visible');
+        }
+
+        function toggleFiltros() {
+            document.getElementById('filtrosPanel').classList.toggle('visible');
+        }
+
+        // Iniciar en pestaña Día
+        cambiarTab('dia');
+    </script>
+</body>
+</html>

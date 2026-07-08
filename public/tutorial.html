@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Tutorial de ejercicio</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <div class="app-cabecera">
+                <a href="rutina.html" class="boton-volver">←</a>
+                <h1 class="app-cabecera__titulo">Tutorial de ejercicio</h1>
+            </div>
+
+            <!-- Video -->
+            <div class="imagen-ejercicio" style="cursor:pointer" onclick="this.querySelector('.play-icon').style.display='none'">
+                <img src="assets/images/puente_gluteo.png" alt="Puente de glúteo">
+                <div class="play-icon" style="
+                    position:absolute;inset:0;
+                    display:flex;align-items:center;justify-content:center;
+                    background:rgba(0,0,0,.25);">
+                    <div style="
+                        width:60px;height:60px;border-radius:50%;
+                        background:rgba(255,255,255,.9);
+                        display:flex;align-items:center;justify-content:center;
+                        font-size:1.6rem;padding-left:4px;">▶</div>
+                </div>
+            </div>
+
+            <!-- Info -->
+            <div class="tarjeta">
+                <h2 style="font-size:1.1rem;font-weight:700;color:var(--dark-text);margin-bottom:.5rem;">Puente de glúteo</h2>
+                <p style="font-size:.9rem;color:var(--body-text);line-height:1.5;margin-bottom:1.2rem;">
+                    Fortalece la zona lumbar, glúteos y mejora la estabilidad de la cadera.
+                </p>
+                <p style="font-size:.88rem;font-weight:700;color:var(--dark-text);margin-bottom:.75rem;">Cómo se realiza:</p>
+                <div class="paso-tutorial"><div class="paso-tutorial__punto"></div><span>Acuéstate boca arriba, rodillas flexionadas.</span></div>
+                <div class="paso-tutorial"><div class="paso-tutorial__punto"></div><span>Eleva la cadera apretando los glúteos.</span></div>
+                <div class="paso-tutorial"><div class="paso-tutorial__punto"></div><span>Mantén la posición 2 segundos.</span></div>
+                <div class="paso-tutorial"><div class="paso-tutorial__punto"></div><span>Baja lentamente y repide.</span></div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-ejercicio">
+                <div class="stat-ejercicio">
+                    <div class="stat-ejercicio__label">Series</div>
+                    <div class="stat-ejercicio__valor">3</div>
+                </div>
+                <div class="stat-ejercicio">
+                    <div class="stat-ejercicio__label">Repeticiones</div>
+                    <div class="stat-ejercicio__valor">12</div>
+                </div>
+                <div class="stat-ejercicio">
+                    <div class="stat-ejercicio__label">Descanso</div>
+                    <div class="stat-ejercicio__valor">30 seg</div>
+                </div>
+            </div>
+
+            <div style="margin-top:1rem">
+                <a href="ejercicio.html" class="boton-app boton-app--primario">Entendido</a>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>

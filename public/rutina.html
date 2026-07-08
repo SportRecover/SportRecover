@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Rutina de hoy</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <div class="app-cabecera">
+                <a href="inicio-app.html" class="boton-volver">←</a>
+                <div>
+                    <h1 class="app-cabecera__titulo">Rutina de hoy</h1>
+                    <p style="font-size:.82rem;color:#888;">Miércoles, 15 de mayo</p>
+                </div>
+            </div>
+
+            <!-- Progreso -->
+            <div class="progreso-rutina tarjeta">
+                <div class="progreso-rutina__info">
+                    <div class="progreso-rutina__titulo" style="font-weight:700">Progreso de hoy</div>
+                    <div class="progreso-rutina__porcentaje">0% completado</div>
+                </div>
+                <div class="progreso-circular">
+                    <svg width="80" height="80" viewBox="0 0 80 80">
+                        <circle class="progreso-circular__fondo" cx="40" cy="40" r="34"/>
+                        <circle class="progreso-circular__relleno" cx="40" cy="40" r="34"
+                            stroke-dasharray="213.6" stroke-dashoffset="213.6"/>
+                    </svg>
+                    <div class="progreso-circular__texto">0%</div>
+                </div>
+            </div>
+
+            <div class="seccion-titulo">Ejercicios (5)</div>
+
+            <a href="ejercicio.html" class="lista-rutina-item">
+                <img src="assets/images/puente_gluteo.png" alt="Puente de glúteo" class="rutina-img">
+                <div>
+                    <div class="rutina-item__nombre">Puente de glúteo</div>
+                    <div class="rutina-item__detalle">3 series · 12 repeticiones</div>
+                </div>
+                <span class="rutina-item__flecha">›</span>
+            </a>
+
+            <a href="ejercicio.html" class="lista-rutina-item">
+                <img src="assets/images/sentadilla_asistida.png" alt="Sentadilla asistida" class="rutina-img">
+                <div>
+                    <div class="rutina-item__nombre">Sentadilla asistida</div>
+                    <div class="rutina-item__detalle">3 series · 10 repeticiones</div>
+                </div>
+                <span class="rutina-item__flecha">›</span>
+            </a>
+
+            <a href="ejercicio.html" class="lista-rutina-item">
+                <img src="assets/images/elevacion_talon.png" alt="Elevación de talón" class="rutina-img">
+                <div>
+                    <div class="rutina-item__nombre">Elevación de talón</div>
+                    <div class="rutina-item__detalle">3 series · 15 repeticiones</div>
+                </div>
+                <span class="rutina-item__flecha">›</span>
+            </a>
+
+            <a href="ejercicio.html" class="lista-rutina-item">
+                <img src="assets/images/plancha_frontal.png" alt="Plancha frontal" class="rutina-img">
+                <div>
+                    <div class="rutina-item__nombre">Plancha frontal</div>
+                    <div class="rutina-item__detalle">3 series · 30 segundos</div>
+                </div>
+                <span class="rutina-item__flecha">›</span>
+            </a>
+
+            <a href="ejercicio.html" class="lista-rutina-item">
+                <img src="assets/images/estiramiento_isquiotibiales.png" alt="Estiramiento de isquiotibiales" class="rutina-img">
+                <div>
+                    <div class="rutina-item__nombre">Estiramiento de isquiotibiales</div>
+                    <div class="rutina-item__detalle">3 series · 20 segundos</div>
+                </div>
+                <span class="rutina-item__flecha">›</span>
+            </a>
+
+            <div style="margin-top:1.5rem">
+                <a href="ejercicio.html" class="boton-app boton-app--primario">Iniciar rutina →</a>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>

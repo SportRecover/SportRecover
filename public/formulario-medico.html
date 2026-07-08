@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Formulario médico</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="cuerpo-azul">
+
+    <div class="menu-lateral-overlay" id="menuOverlay" onclick="cerrarMenu()"></div>
+    <nav class="menu-lateral" id="menuLateral">
+        <ul class="menu-lateral__lista">
+            <li><button class="menu-lateral__item" onclick="mostrarModalNoFuncional()">Reporte de molestias</button></li>
+            <li><a href="fisioterapeutas.html" class="menu-lateral__item" onclick="cerrarMenu()">Fisioterapeuta</a></li>
+            <li><a href="chat.html" class="menu-lateral__item" onclick="cerrarMenu()">Chat fisioterapeuta</a></li>
+            <li><a href="progreso-semanal.html" class="menu-lateral__item" onclick="cerrarMenu()">Mi progreso</a></li>
+            <li><a href="historial.html" class="menu-lateral__item" onclick="cerrarMenu()">Historial de síntomas</a></li>
+            <li><button class="menu-lateral__item" onclick="mostrarModalProfesional()">Registro profesionales</button></li>
+            <li><button class="menu-lateral__item menu-lateral__item--ayuda" onclick="cerrarMenu()">Ayuda</button></li>
+        </ul>
+    </nav>
+
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <button class="barra-nav__boton" aria-label="Abrir menú" onclick="abrirMenu()">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <img src="assets/images/logo.png" alt="SportRecover" class="barra-nav__logo">
+            <span class="barra-nav__usuario">
+                Usuario
+                <span class="barra-nav__avatar-icono">👤</span>
+            </span>
+        </nav>
+    </header>
+
+    <main>
+        <div class="pantalla-formulario">
+            <!-- Icono documento -->
+            <div class="doc-icono-wrap" onclick="document.getElementById('archivoMedico').click()" style="cursor:pointer">
+                <svg viewBox="0 0 90 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="86" height="106" rx="6" stroke="#111" stroke-width="5" fill="white"/>
+                    <path d="M58 2 L88 32" stroke="#111" stroke-width="5"/>
+                    <path d="M58 2 L58 32 L88 32" fill="#e0e0e0" stroke="#111" stroke-width="3"/>
+                    <line x1="18" y1="52" x2="72" y2="52" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+                    <line x1="18" y1="66" x2="72" y2="66" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+                    <line x1="18" y1="80" x2="72" y2="80" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+                    <line x1="18" y1="94" x2="50" y2="94" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+                <input id="archivoMedico" type="file" accept=".pdf,image/*" hidden onchange="validarArchivo(this)">
+            </div>
+
+            <div class="doc-subir-label">Suba su documento en formato PDF o imagen (2MB a 25 MB)</div>
+
+            <!-- Formulario -->
+            <div class="form-medico-grid">
+                <!-- ¿Tiene alguna enfermedad? -->
+                <div class="pregunta-grupo">
+                    <span class="pregunta-grupo__label">¿Tiene alguna enfermedad?</span>
+                    <div class="btn-sino-par">
+                        <button class="btn-sino btn-sino--oscuro" id="enfNO" onclick="seleccionarSiNo('enf','NO')">NO</button>
+                        <button class="btn-sino btn-sino--verde" id="enfSI" onclick="seleccionarSiNo('enf','SI')">SI</button>
+                    </div>
+                </div>
+
+                <!-- Edad -->
+                <div class="campo-edad">
+                    <span class="campo-edad__label">Edad</span>
+                    <input type="number" class="campo-edad__circulo" id="edad" value="23" min="1" max="120">
+                </div>
+
+                <!-- ¿Tiene alguna alergia? -->
+                <div class="pregunta-grupo">
+                    <span class="pregunta-grupo__label">¿Cuenta con alguna alergia?</span>
+                    <div class="btn-sino-par">
+                        <button class="btn-sino btn-sino--oscuro" id="alNO" onclick="seleccionarSiNo('al','NO')">NO</button>
+                        <button class="btn-sino btn-sino--verde" id="alSI" onclick="seleccionarSiNo('al','SI')">SI</button>
+                    </div>
+                </div>
+
+                <!-- Tiempo en rehabilitación -->
+                <div class="campo-rehab">
+                    <span class="campo-rehab__label">Tiempo en rehabilitacion</span>
+                    <input type="text" class="campo-rehab__input" placeholder="mm/dd/yy - mm/dd/yy" id="rehab">
+                </div>
+            </div>
+
+            <button class="boton-enviar" onclick="enviarFormulario()">ENVIAR</button>
+        </div>
+    </main>
+
+    <!-- Modal: alerta de tamaño de archivo -->
+    <div class="modal-overlay" id="modalArchivo" style="display:none;align-items:center;justify-content:center">
+        <div class="modal-alerta">
+            <h3 class="modal-alerta__titulo">Alerta de tamaño de archivo</h3>
+            <div class="modal-alerta__icono">⚠️</div>
+            <p class="modal-alerta__texto">
+                El archivo que está intentando ingresar sobrepasa el peso límite o no se encuentra en el formato permitido;
+                verifique que se ubique en PDF o JPG y tenga un tamaño de 2 MB a 25 MB como máximo.
+            </p>
+            <button class="boton-alerta boton-alerta--verde" onclick="cerrarModalArchivo()">ACEPTAR</button>
+        </div>
+    </div>
+
+    <!-- Modal: opción no funcional -->
+    <div class="modal-overlay" id="modalNoFuncional" style="display:none;align-items:center;justify-content:center">
+        <div class="modal-alerta">
+            <h3 class="modal-alerta__titulo">Opción no funcional</h3>
+            <div class="modal-alerta__icono">⚠️</div>
+            <p class="modal-alerta__texto">No a realizado ninguna consulta, porfavor dirigase a la pestaña principal</p>
+            <button class="boton-alerta boton-alerta--verde" onclick="cerrarModalNoFuncional()">IR</button>
+        </div>
+    </div>
+
+    <!-- Modal: registro profesional -->
+    <div class="modal-overlay" id="modalProfesional" style="display:none;align-items:center;justify-content:center">
+        <div class="modal-alerta">
+            <h3 class="modal-alerta__titulo">Opción seleccionada "Registro profesional"</h3>
+            <div class="modal-alerta__icono">⚠️</div>
+            <p class="modal-alerta__texto">Esta opcion esta apartada para profesionales medicos fisioterapeutas. ¿Estas seguro de seguir?</p>
+            <div class="modal-alerta__botones">
+                <button class="boton-alerta boton-alerta--verde" onclick="cerrarModalProfesional()">NO</button>
+                <button class="boton-alerta boton-alerta--azul" onclick="window.location.href='registro.html'">SI</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace" onclick="abrirMenu();return false;">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+    <script>
+        /* Menú lateral */
+        function abrirMenu() {
+            document.getElementById('menuLateral').classList.add('abierto');
+            document.getElementById('menuOverlay').classList.add('activo');
+        }
+        function cerrarMenu() {
+            document.getElementById('menuLateral').classList.remove('abierto');
+            document.getElementById('menuOverlay').classList.remove('activo');
+        }
+        function mostrarModalNoFuncional() {
+            cerrarMenu();
+            document.getElementById('modalNoFuncional').style.display = 'flex';
+        }
+        function cerrarModalNoFuncional() { document.getElementById('modalNoFuncional').style.display = 'none'; }
+        function mostrarModalProfesional() {
+            cerrarMenu();
+            document.getElementById('modalProfesional').style.display = 'flex';
+        }
+        function cerrarModalProfesional() { document.getElementById('modalProfesional').style.display = 'none'; }
+
+        /* Selección SI/NO */
+        const estado = { enf: 'SI', al: 'SI' };
+        function seleccionarSiNo(grupo, valor) {
+            estado[grupo] = valor;
+            const NO = document.getElementById(grupo + 'NO');
+            const SI = document.getElementById(grupo + 'SI');
+            if (valor === 'NO') {
+                NO.className = 'btn-sino btn-sino--oscuro';
+                SI.className = 'btn-sino';
+            } else {
+                NO.className = 'btn-sino';
+                SI.className = 'btn-sino btn-sino--verde';
+            }
+        }
+
+        /* Validar tamaño de archivo */
+        function validarArchivo(input) {
+            const file = input.files[0];
+            if (!file) return;
+            const MB = file.size / 1024 / 1024;
+            const tipo = file.type;
+            const valido = (tipo === 'application/pdf' || tipo.startsWith('image/')) && MB >= 2 && MB <= 25;
+            if (!valido) {
+                document.getElementById('modalArchivo').style.display = 'flex';
+                input.value = '';
+            }
+        }
+        function cerrarModalArchivo() { document.getElementById('modalArchivo').style.display = 'none'; }
+
+        /* Enviar formulario */
+        function enviarFormulario() {
+            const edad = document.getElementById('edad').value;
+            const rehab = document.getElementById('rehab').value.trim();
+            if (!edad || !rehab) {
+                alert('Por favor completa todos los campos.');
+                return;
+            }
+            window.location.href = 'progreso-semanal.html';
+        }
+    </script>
+</body>
+</html>

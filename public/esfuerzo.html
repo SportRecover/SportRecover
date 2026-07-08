@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - ¿Cómo fue tu esfuerzo?</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <div class="app-cabecera">
+                <a href="sesion-completada.html" class="boton-volver">←</a>
+                <h1 class="app-cabecera__titulo">¿Cómo fue tu esfuerzo?</h1>
+            </div>
+            <p style="font-size:.9rem;color:var(--body-text);margin-bottom:1.5rem;">
+                En una escala del 1 al 5, ¿cómo calificarías tu esfuerzo en la sesión de hoy?
+            </p>
+
+            <div class="escala-esfuerzo" id="escalaEsfuerzo">
+                <label class="nivel-esfuerzo">
+                    <input type="radio" name="esfuerzo" value="1" hidden>
+                    <span class="nivel-esfuerzo__emoji">😁</span>
+                    <div class="nivel-esfuerzo__info">
+                        <div class="nivel-esfuerzo__nombre">1 - Muy fácil</div>
+                        <div class="nivel-esfuerzo__descripcion">No sentí casi esfuerzo</div>
+                    </div>
+                    <div class="nivel-esfuerzo__radio"></div>
+                </label>
+                <label class="nivel-esfuerzo">
+                    <input type="radio" name="esfuerzo" value="2" hidden>
+                    <span class="nivel-esfuerzo__emoji">😊</span>
+                    <div class="nivel-esfuerzo__info">
+                        <div class="nivel-esfuerzo__nombre">2 - Fácil</div>
+                        <div class="nivel-esfuerzo__descripcion">Fue ligero, puedo hacerlo sin dificultad</div>
+                    </div>
+                    <div class="nivel-esfuerzo__radio"></div>
+                </label>
+                <label class="nivel-esfuerzo">
+                    <input type="radio" name="esfuerzo" value="3" hidden>
+                    <span class="nivel-esfuerzo__emoji">😐</span>
+                    <div class="nivel-esfuerzo__info">
+                        <div class="nivel-esfuerzo__nombre">3 - Moderado</div>
+                        <div class="nivel-esfuerzo__descripcion">Fue un esfuerzo adecuado</div>
+                    </div>
+                    <div class="nivel-esfuerzo__radio"></div>
+                </label>
+                <label class="nivel-esfuerzo">
+                    <input type="radio" name="esfuerzo" value="4" hidden>
+                    <span class="nivel-esfuerzo__emoji">😤</span>
+                    <div class="nivel-esfuerzo__info">
+                        <div class="nivel-esfuerzo__nombre">4 - Difícil</div>
+                        <div class="nivel-esfuerzo__descripcion">Fue exigente, pero lo logré</div>
+                    </div>
+                    <div class="nivel-esfuerzo__radio"></div>
+                </label>
+                <label class="nivel-esfuerzo">
+                    <input type="radio" name="esfuerzo" value="5" hidden>
+                    <span class="nivel-esfuerzo__emoji">😡</span>
+                    <div class="nivel-esfuerzo__info">
+                        <div class="nivel-esfuerzo__nombre">5 - Muy difícil</div>
+                        <div class="nivel-esfuerzo__descripcion">Fue exigente, al límite</div>
+                    </div>
+                    <div class="nivel-esfuerzo__radio"></div>
+                </label>
+            </div>
+
+            <a href="dolor.html" class="boton-app boton-app--primario">Guardar evaluación</a>
+        </div>
+    </main>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+    <script>
+        document.querySelectorAll('.nivel-esfuerzo').forEach(el => {
+            el.addEventListener('click', () => {
+                document.querySelectorAll('.nivel-esfuerzo').forEach(e => e.classList.remove('nivel-esfuerzo--seleccionado'));
+                el.classList.add('nivel-esfuerzo--seleccionado');
+            });
+        });
+    </script>
+</body>
+</html>

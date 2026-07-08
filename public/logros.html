@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Mis logros</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Hexagon badge shapes via clip-path */
+        .hex { clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%); }
+    </style>
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <div class="app-cabecera">
+                <a href="inicio-app.html" class="boton-volver">←</a>
+                <h1 class="app-cabecera__titulo">Mis logros</h1>
+            </div>
+
+            <!-- Puntos -->
+            <div class="puntos-tarjeta">
+                <div>
+                    <div class="puntos__label">Puntos totales</div>
+                    <div class="puntos__numero">850</div>
+                </div>
+                <div class="puntos__trofeo">🏆</div>
+            </div>
+
+            <!-- Insignias -->
+            <div class="seccion-cabecera">
+                <span class="seccion-titulo" style="margin:0">Insignias</span>
+                <a href="#" class="ver-todas">Ver todas</a>
+            </div>
+
+            <div class="cuadricula-insignias">
+                <div class="insignia">
+                    <div class="hex" style="width:64px;height:64px;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center;font-size:1.6rem">👑</div>
+                    <span class="insignia__nombre">Primera semana</span>
+                </div>
+                <div class="insignia">
+                    <div class="hex" style="width:64px;height:64px;background:linear-gradient(135deg,#e3f2fd,#b3d9f7);display:flex;align-items:center;justify-content:center;font-size:1.6rem">🏆</div>
+                    <span class="insignia__nombre">Constante</span>
+                </div>
+                <div class="insignia">
+                    <div class="hex" style="width:64px;height:64px;background:linear-gradient(135deg,#f3e5f5,#d7b8e8);display:flex;align-items:center;justify-content:center;font-size:1.6rem">✊</div>
+                    <span class="insignia__nombre">Sin rendirse</span>
+                </div>
+                <div class="insignia">
+                    <div class="hex" style="width:64px;height:64px;background:linear-gradient(135deg,#fff8e1,#f9d44a);display:flex;align-items:center;justify-content:center;font-size:1.6rem">🏃</div>
+                    <span class="insignia__nombre">En movimiento</span>
+                </div>
+                <div class="insignia">
+                    <div class="hex" style="width:64px;height:64px;background:linear-gradient(135deg,#e8f5e9,#a5d6a7);display:flex;align-items:center;justify-content:center;font-size:1.6rem">✅</div>
+                    <span class="insignia__nombre">Progreso</span>
+                </div>
+                <div class="insignia">
+                    <div class="hex" style="width:64px;height:64px;background:linear-gradient(135deg,#fbe9e7,#f4a87c);display:flex;align-items:center;justify-content:center;font-size:1.6rem">🔥</div>
+                    <span class="insignia__nombre">Guerrero</span>
+                </div>
+            </div>
+
+            <!-- Próximos logros -->
+            <div class="seccion-titulo">Próximos logros</div>
+            <div class="tarjeta tarjeta--rosa">
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.75rem">
+                    <div style="width:44px;height:44px;border-radius:12px;background:#fde8d8;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">💪</div>
+                    <div>
+                        <div style="font-weight:700;font-size:.95rem">5 sesiones completadas</div>
+                        <div style="font-size:.82rem;color:var(--body-text)">Consigue 2 sesiones más</div>
+                    </div>
+                </div>
+                <div class="barra-progreso">
+                    <div class="barra-progreso__relleno" style="width:60%"></div>
+                </div>
+                <div style="font-size:.78rem;color:#888;margin-top:.4rem;text-align:right">3 / 5</div>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>

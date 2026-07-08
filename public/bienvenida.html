@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Bienvenida</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="cuerpo-azul">
+
+    <!-- Overlay cierra el menú al hacer clic fuera -->
+    <div class="menu-lateral-overlay" id="menuOverlay" onclick="cerrarMenu()"></div>
+
+    <!-- Menú lateral (hamburger drawer) -->
+    <nav class="menu-lateral" id="menuLateral">
+        <ul class="menu-lateral__lista">
+            <li><button class="menu-lateral__item" onclick="mostrarModalNoFuncional()">Reporte de molestias</button></li>
+            <li><a href="fisioterapeutas.html" class="menu-lateral__item" onclick="cerrarMenu()">Fisioterapeuta</a></li>
+            <li><a href="chat.html" class="menu-lateral__item" onclick="cerrarMenu()">Chat fisioterapeuta</a></li>
+            <li><a href="progreso-semanal.html" class="menu-lateral__item" onclick="cerrarMenu()">Mi progreso</a></li>
+            <li><a href="historial.html" class="menu-lateral__item" onclick="cerrarMenu()">Historial de síntomas</a></li>
+            <li><button class="menu-lateral__item" onclick="mostrarModalProfesional()">Registro profesionales</button></li>
+            <li><button class="menu-lateral__item menu-lateral__item--ayuda" onclick="cerrarMenu()">Ayuda</button></li>
+        </ul>
+    </nav>
+
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <button class="barra-nav__boton" aria-label="Abrir menú" onclick="abrirMenu()">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <img src="assets/images/logo.png" alt="SportRecover" class="barra-nav__logo">
+            <span class="barra-nav__usuario">
+                Usuario
+                <span class="barra-nav__avatar-icono">👤</span>
+            </span>
+        </nav>
+    </header>
+
+    <main class="pantalla-splash">
+        <div class="splash-contenido">
+            <h1 class="splash-titulo">SportRecover</h1>
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="splash-icono-runner">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:.3rem">
+                <img src="assets/images/logo.png" alt="SportRecover" class="splash-logo-imagen">
+                <p class="splash-eslogan">Recupera tu mejor versión</p>
+            </div>
+        </div>
+
+        <a href="formulario-medico.html" class="boton-documentos">
+            <svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="1" width="20" height="24" rx="3" stroke="white" stroke-width="2"/>
+                <line x1="5" y1="8"  x2="17" y2="8"  stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <line x1="5" y1="13" x2="17" y2="13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <line x1="5" y1="18" x2="12" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Mis documentos médicos
+        </a>
+    </main>
+
+    <!-- Modal: opción no funcional -->
+    <div class="modal-overlay" id="modalNoFuncional" style="display:none;align-items:center;justify-content:center">
+        <div class="modal-alerta">
+            <h3 class="modal-alerta__titulo">Opción no funcional</h3>
+            <div class="modal-alerta__icono">⚠️</div>
+            <p class="modal-alerta__texto">No a realizado ninguna consulta, porfavor dirigase a la pestaña principal</p>
+            <button class="boton-alerta boton-alerta--verde" onclick="cerrarModalNoFuncional()">IR</button>
+        </div>
+    </div>
+
+    <!-- Modal: registro profesional -->
+    <div class="modal-overlay" id="modalProfesional" style="display:none;align-items:center;justify-content:center">
+        <div class="modal-alerta">
+            <h3 class="modal-alerta__titulo">Opción seleccionada "Registro profesional"</h3>
+            <div class="modal-alerta__icono">⚠️</div>
+            <p class="modal-alerta__texto">Esta opcion esta apartada para profesionales medicos fisioterapeutas. ¿Estas seguro de seguir?</p>
+            <div class="modal-alerta__botones">
+                <button class="boton-alerta boton-alerta--verde" onclick="cerrarModalProfesional()">NO</button>
+                <button class="boton-alerta boton-alerta--azul" onclick="window.location.href='registro.html'">SI</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace" onclick="abrirMenu();return false;">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+    <script>
+        function abrirMenu() {
+            document.getElementById('menuLateral').classList.add('abierto');
+            document.getElementById('menuOverlay').classList.add('activo');
+        }
+        function cerrarMenu() {
+            document.getElementById('menuLateral').classList.remove('abierto');
+            document.getElementById('menuOverlay').classList.remove('activo');
+        }
+        function mostrarModalNoFuncional() {
+            cerrarMenu();
+            document.getElementById('modalNoFuncional').style.display = 'flex';
+        }
+        function cerrarModalNoFuncional() {
+            document.getElementById('modalNoFuncional').style.display = 'none';
+        }
+        function mostrarModalProfesional() {
+            cerrarMenu();
+            document.getElementById('modalProfesional').style.display = 'flex';
+        }
+        function cerrarModalProfesional() {
+            document.getElementById('modalProfesional').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Evidencia fotográfica</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <div class="app-cabecera">
+                <a href="inicio-app.html" class="boton-volver">←</a>
+                <h1 class="app-cabecera__titulo">Evidencia fotográfica</h1>
+            </div>
+            <p style="font-size:.88rem;color:var(--body-text);text-align:center;margin-bottom:1.5rem;">
+                Toma o sube fotos de tu progreso<br>para llevar un mejor seguimiento
+            </p>
+
+            <!-- Tomar foto -->
+            <div class="zona-subida" onclick="document.getElementById('camInput').click()">
+                <div class="zona-subida__icono">📷</div>
+                <div class="zona-subida__texto">Tomar foto</div>
+                <input id="camInput" type="file" accept="image/*" capture="environment" hidden>
+            </div>
+
+            <!-- Subir desde galería -->
+            <div class="zona-subida" style="margin-top:0" onclick="document.getElementById('galInput').click()">
+                <div style="display:flex;align-items:center;justify-content:center;gap:.75rem">
+                    <span style="font-size:1.6rem;color:var(--primary-green)">🖼️</span>
+                    <span class="zona-subida__texto">Subir desde galeria</span>
+                </div>
+                <input id="galInput" type="file" accept="image/*" hidden>
+            </div>
+
+            <!-- Fotos recientes -->
+            <div class="seccion-cabecera" style="margin-top:1.5rem">
+                <span class="seccion-titulo" style="margin:0">Fotos recientes</span>
+                <a href="#" class="ver-todas">Ver todas</a>
+            </div>
+
+            <div class="galeria-fotos">
+                <div class="foto-item">
+                    <img src="assets/images/chico-laptop.png" alt="15 may">
+                    <span class="foto-item__fecha">15 may</span>
+                </div>
+                <div class="foto-item">
+                    <img src="assets/images/chico-laptop.png" alt="8 may">
+                    <span class="foto-item__fecha">8 may</span>
+                </div>
+                <div class="foto-item">
+                    <img src="assets/images/chico-laptop.png" alt="1 may">
+                    <span class="foto-item__fecha">1 may</span>
+                </div>
+            </div>
+
+            <div class="nota-info">
+                <span>ℹ️</span>
+                <span>Estas fotos son privadas y solo las verá tu fisioterapeuta</span>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>

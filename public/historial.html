@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Historial de síntomas</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <div class="app-cabecera">
+                <a href="inicio-app.html" class="boton-volver">←</a>
+                <h1 class="app-cabecera__titulo">Historial de síntomas</h1>
+            </div>
+
+            <div class="pestanas">
+                <button class="pestana pestana--activa">Dolor</button>
+                <button class="pestana">Esfuerzo</button>
+                <button class="pestana">Otros</button>
+            </div>
+
+            <div style="font-size:.88rem;color:var(--body-text);margin-bottom:1rem;">
+                Esfuerzo <span style="color:#888;">(Últimos 7 días)</span>
+            </div>
+
+            <!-- Gráfico -->
+            <div class="grafico-contenedor">
+                <div class="grafico-area">
+                    <div class="grafico-col">
+                        <div class="grafico-col__barra" style="height:84px"></div>
+                        <span class="grafico-col__label">Jueves</span>
+                    </div>
+                    <div class="grafico-col">
+                        <div class="grafico-col__barra" style="height:84px"></div>
+                        <span class="grafico-col__label">Viernes</span>
+                    </div>
+                    <div class="grafico-col">
+                        <div class="grafico-col__barra" style="height:56px"></div>
+                        <span class="grafico-col__label">Sábado</span>
+                    </div>
+                    <div class="grafico-col">
+                        <div class="grafico-col__barra" style="height:98px"></div>
+                        <span class="grafico-col__label">Domingo</span>
+                    </div>
+                    <div class="grafico-col">
+                        <div class="grafico-col__barra" style="height:42px"></div>
+                        <span class="grafico-col__label">Lunes</span>
+                    </div>
+                    <div class="grafico-col">
+                        <div class="grafico-col__barra" style="height:28px"></div>
+                        <span class="grafico-col__label">Martes</span>
+                    </div>
+                    <div class="grafico-col">
+                        <div class="grafico-col__barra grafico-col__barra--activo" style="height:56px"></div>
+                        <span class="grafico-col__label">Miérc.</span>
+                    </div>
+                </div>
+                <div style="position:absolute;top:12px;right:12px;background:#f5f5f5;border-radius:8px;padding:.4rem .8rem;font-size:.8rem;font-weight:700;pointer-events:none;display:none" id="tooltip">4 - Moderado</div>
+            </div>
+
+            <!-- Lista -->
+            <div class="tarjeta" style="margin-bottom:.5rem">
+                <div style="display:flex;align-items:center;gap:1rem;">
+                    <div style="width:22px;height:22px;border-radius:50%;border:2px solid #d0d0d0;flex-shrink:0"></div>
+                    <div>
+                        <div style="font-weight:700;font-size:.95rem">Miércoles 15 mayo</div>
+                        <div style="font-size:.82rem;color:#888">Dolor: 4 / 10</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tarjeta" style="margin-bottom:.5rem">
+                <div style="display:flex;align-items:center;gap:1rem;">
+                    <div style="width:22px;height:22px;border-radius:50%;border:2px solid #d0d0d0;flex-shrink:0"></div>
+                    <div>
+                        <div style="font-weight:700;font-size:.95rem">Martes 14 mayo</div>
+                        <div style="font-size:.82rem;color:#888">Dolor: 5 / 10</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tarjeta" style="margin-bottom:.5rem">
+                <div style="display:flex;align-items:center;gap:1rem;">
+                    <div style="width:22px;height:22px;border-radius:50%;border:2px solid #d0d0d0;flex-shrink:0"></div>
+                    <div>
+                        <div style="font-weight:700;font-size:.95rem">Lunes 13 mayo</div>
+                        <div style="font-size:.82rem;color:#888">Dolor: 6 / 10</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:1rem">
+                <a href="evidencia.html" style="color:var(--primary-green);font-weight:700;font-size:.9rem;text-decoration:none">Ver más historial</a>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>

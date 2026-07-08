@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Calendario</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace barra-nav__enlace--activo">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <div class="app-cabecera">
+                <a href="inicio-app.html" class="boton-volver">←</a>
+                <h1 class="app-cabecera__titulo">Calendario</h1>
+            </div>
+
+            <div class="pestanas">
+                <button class="pestana pestana--activa">Día</button>
+                <button class="pestana">Mes</button>
+                <button class="pestana">Resumen</button>
+            </div>
+
+            <!-- Notificación -->
+            <div class="notif-fila">
+                <span>Notificación -</span>
+                <span class="notif-inactiva">inactiva 🔔</span>
+            </div>
+
+            <!-- Mayo -->
+            <div class="divisor-mes">Mayo</div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio__fila">
+                    <span class="ejercicio__dia">Lunes</span>
+                    <span class="ejercicio__hora">9:00 - 11:00 a.m.</span>
+                </div>
+                <div class="ejercicio__nombre">Ejercicio de movilidad</div>
+                <div class="ejercicio__descripcion">Realizar una ruta de trote de 10 kilómetros con descansos de 5 minutos durante el recorrido.</div>
+                <a href="tutorial.html" class="ejercicio__boton-detalle">Detalles</a>
+                <div style="clear:both"></div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio__fila">
+                    <span class="ejercicio__dia">Lunes</span>
+                    <span class="ejercicio__hora">13:00 - 15:00 p.m.</span>
+                </div>
+                <div class="ejercicio__nombre">Ejercicio de flexibilidad</div>
+                <div class="ejercicio__descripcion">Ejercicios de elevación suave de la pierna, estiramientos de cuádriceps y movilidad de rodilla sen...</div>
+                <a href="tutorial.html" class="ejercicio__boton-detalle">Detalles</a>
+                <div style="clear:both"></div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio__fila">
+                    <span class="ejercicio__dia">Martes</span>
+                    <span class="ejercicio__hora">15:00 - 17:00 p.m.</span>
+                </div>
+                <div class="ejercicio__nombre">Ejercicio de movilidad</div>
+                <div class="ejercicio__descripcion">Ejercicios de estiramiento de isquiotibiales, flexión suave de rodilla y movilidad articular de piernas.</div>
+                <a href="tutorial.html" class="ejercicio__boton-detalle">Detalles</a>
+                <div style="clear:both"></div>
+            </div>
+
+            <!-- Junio -->
+            <div class="divisor-mes">Junio</div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio__fila">
+                    <span class="ejercicio__dia">Jueves</span>
+                    <span class="ejercicio__hora">11:00 - 13:00 p.m.</span>
+                </div>
+                <div class="ejercicio__nombre">Ejercicio de fuerza</div>
+                <div class="ejercicio__descripcion">Trabajo de fortalecimiento muscular progresivo para la zona afectada.</div>
+                <a href="tutorial.html" class="ejercicio__boton-detalle">Detalles</a>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal notificación -->
+    <div class="modal-overlay" id="modalNotif" style="display:none">
+        <div class="modal">
+            <div class="modal__icono">🔔</div>
+            <p class="modal__titulo">¿Desea que se le notifique una hora antes de un ejercicio?</p>
+            <div class="modal__botones">
+                <button class="boton-app boton-app--secundario" onclick="document.getElementById('modalNotif').style.display='none'">No</button>
+                <button class="boton-app boton-app--primario" onclick="document.getElementById('modalNotif').style.display='none'">Sí, activar</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+    <script>
+        document.querySelector('.notif-fila').addEventListener('click', function() {
+            document.getElementById('modalNotif').style.display = 'flex';
+        });
+    </script>
+</body>
+</html>

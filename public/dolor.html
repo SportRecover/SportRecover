@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - ¿Sientes dolor?</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <div class="app-cabecera">
+                <a href="esfuerzo.html" class="boton-volver">←</a>
+                <h1 class="app-cabecera__titulo">¿Sientes dolor?</h1>
+            </div>
+            <p style="font-size:.9rem;color:var(--body-text);margin-bottom:1.5rem;text-align:center;">
+                Indica tu nivel de dolor actual<br>en una escala de del 1 al 10
+            </p>
+
+            <div style="font-weight:700;font-size:1rem;margin-bottom:.75rem;">Escala de dolor</div>
+
+            <div class="contenedor-escala-dolor">
+                <div class="escala-dolor" id="escalaDolor">
+                    <!-- colores: verde → amarillo → naranja → rojo -->
+                    <div class="dolor__punto"><span class="dolor__numero">1</span><div class="dolor__circulo" style="background:#2ecc40" data-n="1"></div></div>
+                    <div class="dolor__punto"><span class="dolor__numero">2</span><div class="dolor__circulo" style="background:#52c234" data-n="2"></div></div>
+                    <div class="dolor__punto"><span class="dolor__numero">3</span><div class="dolor__circulo" style="background:#7dc430" data-n="3"></div></div>
+                    <div class="dolor__punto"><span class="dolor__numero">4</span><div class="dolor__circulo" style="background:#a8c228" data-n="4"></div></div>
+                    <div class="dolor__punto"><span class="dolor__numero">5</span><div class="dolor__circulo" style="background:#c8b820" data-n="5"></div></div>
+                    <div class="dolor__punto"><span class="dolor__numero">6</span><div class="dolor__circulo" style="background:#d49420" data-n="6"></div></div>
+                    <div class="dolor__punto"><span class="dolor__numero">7</span><div class="dolor__circulo dolor__circulo--seleccionado" style="background:#d46820" data-n="7"></div></div>
+                    <div class="dolor__punto"><span class="dolor__numero">8</span><div class="dolor__circulo" style="background:#d44020" data-n="8"></div></div>
+                    <div class="dolor__punto"><span class="dolor__numero">9</span><div class="dolor__circulo" style="background:#c82020" data-n="9"></div></div>
+                    <div class="dolor__punto"><span class="dolor__numero">10</span><div class="dolor__circulo" style="background:#a01010" data-n="10"></div></div>
+                </div>
+                <div class="dolor__indicador" id="dolorIndicador">▼ Moderado</div>
+            </div>
+
+            <div style="font-weight:700;font-size:1rem;margin-bottom:1rem;">¿Dónde sientes dolor?</div>
+
+            <!-- Diagrama corporal con imagen -->
+            <div style="display:flex;justify-content:center;gap:3rem;padding:1.5rem 0;margin-bottom:1.5rem;background:#fff;border-radius:14px;border:1px solid #f0f0f0;">
+                <img src="assets/images/nosotros.png" alt="Cuerpo frontal" style="height:160px;object-fit:contain;opacity:.35;">
+                <img src="assets/images/nosotros.png" alt="Cuerpo trasero" style="height:160px;object-fit:contain;opacity:.35;transform:scaleX(-1);">
+            </div>
+
+            <div style="font-weight:700;font-size:1rem;margin-bottom:.5rem;">Notas adicionales <span style="font-weight:400;color:#888;">(Opcional)</span></div>
+            <div class="tarjeta" style="padding:1rem">
+                <textarea placeholder="Describe cómo te sientes" maxlength="200" style="
+                    width:100%;min-height:80px;border:none;outline:none;
+                    font-family:var(--font-family);font-size:.9rem;
+                    color:var(--body-text);resize:none;background:transparent;"
+                    oninput="document.getElementById('contDolor').textContent=this.value.length+'/200'"></textarea>
+                <div id="contDolor" style="font-size:.78rem;color:#aaa;text-align:right;">0/200</div>
+            </div>
+
+            <div style="margin-top:1.5rem">
+                <a href="resumen.html" class="boton-app boton-app--primario">Guardar reporte</a>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+    <script>
+        const niveles = ['Sin dolor','Mínimo','Leve','Moderado-leve','Moderado','Moderado','Moderado','Intenso','Muy intenso','Extremo'];
+        document.querySelectorAll('.dolor__circulo').forEach(c => {
+            c.addEventListener('click', () => {
+                document.querySelectorAll('.dolor__circulo').forEach(x => x.classList.remove('dolor__circulo--seleccionado'));
+                c.classList.add('dolor__circulo--seleccionado');
+                const n = parseInt(c.dataset.n);
+                document.getElementById('dolorIndicador').textContent = '▼ ' + niveles[n-1];
+            });
+        });
+    </script>
+</body>
+</html>

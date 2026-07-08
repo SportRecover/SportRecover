@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Ejercicio en progreso</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <div class="app-cabecera">
+                <a href="rutina.html" class="boton-volver">←</a>
+                <h1 class="app-cabecera__titulo">Puente de glúteo</h1>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-ejercicio">
+                <div class="stat-ejercicio">
+                    <div class="stat-ejercicio__label">Series</div>
+                    <div class="stat-ejercicio__valor">2 / 3</div>
+                </div>
+                <div class="stat-ejercicio">
+                    <div class="stat-ejercicio__label">Repeticiones</div>
+                    <div class="stat-ejercicio__valor">6 / 10</div>
+                </div>
+                <div class="stat-ejercicio">
+                    <div class="stat-ejercicio__label">Tiempo</div>
+                    <div class="stat-ejercicio__valor" id="cronometro">00:23</div>
+                    <div class="stat-ejercicio__sub">Tiempo</div>
+                </div>
+            </div>
+
+            <!-- Video/image -->
+            <div class="imagen-ejercicio">
+                <img src="assets/images/puente_gluteo.png" alt="Puente de glúteo">
+                <span class="imagen-ejercicio__tag">IA activa</span>
+            </div>
+
+            <!-- Controles -->
+            <div class="controles-ejercicio">
+                <div class="control-item">
+                    <button class="control-circulo" onclick="window.location.href='postura.html'">⏸</button>
+                    <span>Pausar</span>
+                </div>
+                <div class="control-item">
+                    <button class="control-circulo--principal" onclick="window.location.href='sesion-completada.html'">
+                        Finalizar<br>repetición
+                    </button>
+                </div>
+                <div class="control-item">
+                    <button class="control-circulo" onclick="window.location.href='rutina.html'">↪</button>
+                    <span>Salir</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+    <script>
+        let segundos = 23;
+        setInterval(() => {
+            segundos++;
+            const m = String(Math.floor(segundos/60)).padStart(2,'0');
+            const s = String(segundos%60).padStart(2,'0');
+            document.getElementById('cronometro').textContent = m + ':' + s;
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Resumen</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <div class="app-cabecera">
+                <a href="calendario.html" class="boton-volver">←</a>
+                <h1 class="app-cabecera__titulo">Resumen</h1>
+            </div>
+
+            <p style="font-size:1rem;font-weight:700;margin-bottom:1rem;">¡Veamos cómo te ha ido!</p>
+
+            <!-- Puntualidad -->
+            <div class="tarjeta">
+                <div style="font-weight:700;font-size:.95rem;margin-bottom:1rem;">Puntualidad durante el mes de Mayo</div>
+                <div style="display:flex;align-items:center;gap:1.5rem">
+                    <div class="progreso-circular" style="width:80px;height:80px">
+                        <svg width="80" height="80" viewBox="0 0 80 80">
+                            <circle class="progreso-circular__fondo" cx="40" cy="40" r="34"/>
+                            <circle class="progreso-circular__relleno" cx="40" cy="40" r="34"
+                                stroke-dasharray="213.6" stroke-dashoffset="23.5"/>
+                        </svg>
+                        <div class="progreso-circular__texto">89%</div>
+                    </div>
+                    <p style="font-size:.88rem;color:var(--body-text);line-height:1.5;flex:1">
+                        Tu puntualidad ha sido casi excelente, sigue así. No has fallado con tu rehabilitación.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stat-resumen">
+                <div class="stat-resumen__item">
+                    <div class="stat-resumen__label">Has recorrido...</div>
+                    <div class="stat-resumen__valor">30 Km</div>
+                </div>
+                <div class="stat-resumen__item">
+                    <div class="stat-resumen__label"></div>
+                    <div class="stat-resumen__texto">¡Muy bien! Sigues en forma, tu constancia va por buen camino.</div>
+                </div>
+            </div>
+
+            <!-- Conclusión -->
+            <div style="text-align:center;margin:1.5rem 0 .75rem">
+                <span class="etiqueta etiqueta--verde" style="font-size:.9rem;padding:.4rem 1.2rem">Conclusión</span>
+            </div>
+
+            <div class="tarjeta" style="display:flex;align-items:center;gap:1rem">
+                <span style="font-size:1.8rem">👍</span>
+                <p style="font-size:.9rem;color:var(--body-text);line-height:1.5;flex:1">
+                    Tu cuerpo sigue en excelente forma, no has perdido el enfoque.
+                </p>
+            </div>
+
+            <div class="tarjeta tarjeta--verde" style="display:flex;align-items:flex-start;gap:1rem">
+                <span style="font-size:1.4rem;flex-shrink:0">💚</span>
+                <p style="font-size:.9rem;line-height:1.5;color:#fff">
+                    Según tu constancia en tu rutina, se espera que en un mes tu recuperación mejore en un 60%.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>

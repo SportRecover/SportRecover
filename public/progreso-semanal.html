@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Progreso semanal</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="cuerpo-azul">
+
+    <div class="menu-lateral-overlay" id="menuOverlay" onclick="cerrarMenu()"></div>
+    <nav class="menu-lateral" id="menuLateral">
+        <ul class="menu-lateral__lista">
+            <li><button class="menu-lateral__item" onclick="mostrarModalNoFuncional()">Reporte de molestias</button></li>
+            <li><a href="fisioterapeutas.html" class="menu-lateral__item" onclick="cerrarMenu()">Fisioterapeuta</a></li>
+            <li><a href="chat.html" class="menu-lateral__item" onclick="cerrarMenu()">Chat fisioterapeuta</a></li>
+            <li><a href="progreso-semanal.html" class="menu-lateral__item menu-lateral__item--activo">Mi progreso</a></li>
+            <li><a href="historial.html" class="menu-lateral__item" onclick="cerrarMenu()">Historial de síntomas</a></li>
+            <li><button class="menu-lateral__item" onclick="mostrarModalProfesional()">Registro profesionales</button></li>
+            <li><button class="menu-lateral__item menu-lateral__item--ayuda" onclick="cerrarMenu()">Ayuda</button></li>
+        </ul>
+    </nav>
+
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <button class="barra-nav__boton" aria-label="Abrir menú" onclick="abrirMenu()">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <img src="assets/images/logo.png" alt="SportRecover" class="barra-nav__logo">
+            <span class="barra-nav__usuario">
+                Usuario
+                <span class="barra-nav__avatar-icono">👤</span>
+            </span>
+        </nav>
+    </header>
+
+    <main>
+        <div class="pantalla-progreso-semanal">
+            <h1 class="progreso-semanal__titulo">Bienvenido a SportRecover</h1>
+
+            <!-- Tracker de días -->
+            <div class="tracker-semana">
+
+                <!-- Lunes — completado -->
+                <div class="tracker-dia">
+                    <span class="tracker-dia__nombre">Lunes</span>
+                    <svg viewBox="0 0 60 60" width="56" height="56">
+                        <circle cx="30" cy="30" r="27" fill="#4CC94C" stroke="#1a3a5c" stroke-width="3"/>
+                        <polyline points="16,30 26,42 44,18" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <!-- Martes — completado -->
+                <div class="tracker-dia">
+                    <span class="tracker-dia__nombre">Martes</span>
+                    <svg viewBox="0 0 60 60" width="56" height="56">
+                        <circle cx="30" cy="30" r="27" fill="#4CC94C" stroke="#1a3a5c" stroke-width="3"/>
+                        <polyline points="16,30 26,42 44,18" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <!-- Miércoles — completado -->
+                <div class="tracker-dia">
+                    <span class="tracker-dia__nombre">Miercoles</span>
+                    <svg viewBox="0 0 60 60" width="56" height="56">
+                        <circle cx="30" cy="30" r="27" fill="#4CC94C" stroke="#1a3a5c" stroke-width="3"/>
+                        <polyline points="16,30 26,42 44,18" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <!-- Jueves — pendiente (reloj) -->
+                <div class="tracker-dia">
+                    <span class="tracker-dia__nombre">Jueves</span>
+                    <svg viewBox="0 0 60 60" width="56" height="56">
+                        <circle cx="30" cy="30" r="27" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="5,3"/>
+                        <path d="M30,3 A27,27 0 0,1 57,30 L30,30 Z" fill="#f5a623"/>
+                        <circle cx="30" cy="30" r="18" fill="#f5a623" stroke="#333" stroke-width="2.5"/>
+                        <line x1="30" y1="30" x2="30" y2="16" stroke="#222" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="30" y1="30" x2="41" y2="30" stroke="#222" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="30" cy="30" r="2.5" fill="#222"/>
+                    </svg>
+                </div>
+
+                <!-- Viernes — pendiente -->
+                <div class="tracker-dia">
+                    <span class="tracker-dia__nombre">Viernes</span>
+                    <svg viewBox="0 0 60 60" width="56" height="56">
+                        <circle cx="30" cy="30" r="27" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="5,3"/>
+                        <path d="M30,3 A27,27 0 0,1 57,30 L30,30 Z" fill="#f5a623"/>
+                        <circle cx="30" cy="30" r="18" fill="#f5a623" stroke="#333" stroke-width="2.5"/>
+                        <line x1="30" y1="30" x2="30" y2="16" stroke="#222" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="30" y1="30" x2="41" y2="30" stroke="#222" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="30" cy="30" r="2.5" fill="#222"/>
+                    </svg>
+                </div>
+
+                <!-- Sábado — pendiente -->
+                <div class="tracker-dia">
+                    <span class="tracker-dia__nombre">Sabado</span>
+                    <svg viewBox="0 0 60 60" width="56" height="56">
+                        <circle cx="30" cy="30" r="27" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="5,3"/>
+                        <path d="M30,3 A27,27 0 0,1 57,30 L30,30 Z" fill="#f5a623"/>
+                        <circle cx="30" cy="30" r="18" fill="#f5a623" stroke="#333" stroke-width="2.5"/>
+                        <line x1="30" y1="30" x2="30" y2="16" stroke="#222" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="30" y1="30" x2="41" y2="30" stroke="#222" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="30" cy="30" r="2.5" fill="#222"/>
+                    </svg>
+                </div>
+
+                <!-- Domingo — pendiente -->
+                <div class="tracker-dia">
+                    <span class="tracker-dia__nombre">Domingo</span>
+                    <svg viewBox="0 0 60 60" width="56" height="56">
+                        <circle cx="30" cy="30" r="27" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="5,3"/>
+                        <path d="M30,3 A27,27 0 0,1 57,30 L30,30 Z" fill="#f5a623"/>
+                        <circle cx="30" cy="30" r="18" fill="#f5a623" stroke="#333" stroke-width="2.5"/>
+                        <line x1="30" y1="30" x2="30" y2="16" stroke="#222" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="30" y1="30" x2="41" y2="30" stroke="#222" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="30" cy="30" r="2.5" fill="#222"/>
+                    </svg>
+                </div>
+
+            </div>
+
+            <div class="racha-badge">RACHA DE 1</div>
+
+            <a href="progreso-semana.html" class="boton-progreso">Progreso semanal</a>
+        </div>
+    </main>
+
+    <!-- Modal: opción no funcional -->
+    <div class="modal-overlay" id="modalNoFuncional" style="display:none;align-items:center;justify-content:center">
+        <div class="modal-alerta">
+            <h3 class="modal-alerta__titulo">Opción no funcional</h3>
+            <div class="modal-alerta__icono">⚠️</div>
+            <p class="modal-alerta__texto">No a realizado ninguna consulta, porfavor dirigase a la pestaña principal</p>
+            <button class="boton-alerta boton-alerta--verde" onclick="cerrarModalNoFuncional()">IR</button>
+        </div>
+    </div>
+
+    <!-- Modal: registro profesional -->
+    <div class="modal-overlay" id="modalProfesional" style="display:none;align-items:center;justify-content:center">
+        <div class="modal-alerta">
+            <h3 class="modal-alerta__titulo">Opción seleccionada "Registro profesional"</h3>
+            <div class="modal-alerta__icono">⚠️</div>
+            <p class="modal-alerta__texto">Esta opcion esta apartada para profesionales medicos fisioterapeutas. ¿Estas seguro de seguir?</p>
+            <div class="modal-alerta__botones">
+                <button class="boton-alerta boton-alerta--verde" onclick="cerrarModalProfesional()">NO</button>
+                <button class="boton-alerta boton-alerta--azul" onclick="window.location.href='registro.html'">SI</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace" onclick="abrirMenu();return false;">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+    <script>
+        function abrirMenu() {
+            document.getElementById('menuLateral').classList.add('abierto');
+            document.getElementById('menuOverlay').classList.add('activo');
+        }
+        function cerrarMenu() {
+            document.getElementById('menuLateral').classList.remove('abierto');
+            document.getElementById('menuOverlay').classList.remove('activo');
+        }
+        function mostrarModalNoFuncional() {
+            cerrarMenu();
+            document.getElementById('modalNoFuncional').style.display = 'flex';
+        }
+        function cerrarModalNoFuncional() { document.getElementById('modalNoFuncional').style.display = 'none'; }
+        function mostrarModalProfesional() {
+            cerrarMenu();
+            document.getElementById('modalProfesional').style.display = 'flex';
+        }
+        function cerrarModalProfesional() { document.getElementById('modalProfesional').style.display = 'none'; }
+    </script>
+</body>
+</html>

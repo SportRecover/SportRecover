@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Fisioterapeutas</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace barra-nav__enlace--activo">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <div class="app-cabecera">
+                <a href="inicio-app.html" class="boton-volver">←</a>
+                <h1 class="app-cabecera__titulo">Fisioterapeutas</h1>
+            </div>
+
+            <!-- Búsqueda -->
+            <div class="campo-busqueda">
+                <span>🔍</span>
+                <input type="text" placeholder="Buscar fisioterapeuta...">
+                <button class="campo-busqueda__filtro" title="Filtros">⚙️</button>
+            </div>
+
+            <div class="seccion-titulo">Disponibles</div>
+
+            <a href="chat.html" class="tarjeta-fisio">
+                <img src="assets/images/fisioterapeuta4.jpeg" alt="Juan Pérez" class="avatar">
+                <div class="fisio__info">
+                    <div class="fisio__nombre">Juan Pérez</div>
+                    <div class="fisio__especialidad">Especialista en rodilla</div>
+                    <div class="fisio__rating">⭐ 4.8 (120)</div>
+                </div>
+                <span class="etiqueta etiqueta--verde">Disponible</span>
+                <span class="fisio__flecha"> ›</span>
+            </a>
+
+            <a href="chat.html" class="tarjeta-fisio">
+                <img src="assets/images/fisioterapeuta2.jpeg" alt="María González" class="avatar">
+                <div class="fisio__info">
+                    <div class="fisio__nombre">María González</div>
+                    <div class="fisio__especialidad">Especialista en columna</div>
+                    <div class="fisio__rating">⭐ 4.9 (98)</div>
+                </div>
+                <span class="etiqueta etiqueta--verde">Disponible</span>
+                <span class="fisio__flecha"> ›</span>
+            </a>
+
+            <a href="chat.html" class="tarjeta-fisio">
+                <img src="assets/images/fisioterapeuta3.jpeg" alt="Carlos López" class="avatar">
+                <div class="fisio__info">
+                    <div class="fisio__nombre">Carlos López</div>
+                    <div class="fisio__especialidad">Rehabilitación deportiva</div>
+                    <div class="fisio__rating">⭐ 4.7 (75)</div>
+                </div>
+                <span class="etiqueta etiqueta--verde">Disponible</span>
+                <span class="fisio__flecha"> ›</span>
+            </a>
+
+            <a href="chat.html" class="tarjeta-fisio">
+                <img src="assets/images/fisioterapeuta1.jpeg" alt="Ana Torres" class="avatar">
+                <div class="fisio__info">
+                    <div class="fisio__nombre">Ana Torres</div>
+                    <div class="fisio__especialidad">Terapia física y deportiva</div>
+                    <div class="fisio__rating">⭐ 4.9 (110)</div>
+                </div>
+                <span class="etiqueta etiqueta--verde">Disponible</span>
+                <span class="fisio__flecha"> ›</span>
+            </a>
+
+            <a href="chat.html" class="tarjeta-fisio">
+                <img src="assets/images/fisioterapeuta2.jpeg" alt="Luis Ramírez" class="avatar">
+                <div class="fisio__info">
+                    <div class="fisio__nombre">Luis Ramírez</div>
+                    <div class="fisio__especialidad">Especialista en hombro</div>
+                    <div class="fisio__rating">⭐ 4.6 (60)</div>
+                </div>
+                <span class="etiqueta etiqueta--verde">Disponible</span>
+                <span class="fisio__flecha"> ›</span>
+            </a>
+        </div>
+    </main>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>

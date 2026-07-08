@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRecover - Chat con fisioterapeuta</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="barra-nav">
+            <img src="assets/images/logo.png" alt="Logo SportRecover" class="barra-nav__logo">
+            <button class="barra-nav__boton" aria-label="Abrir menú">
+                <img src="assets/images/Vector.png" alt="Menú" class="barra-nav__icono-boton">
+            </button>
+            <ul class="barra-nav__menu">
+                <li><a href="inicio-app.html" class="barra-nav__enlace">Mi Panel</a></li>
+                <li><a href="calendario.html" class="barra-nav__enlace">Calendario</a></li>
+                <li><a href="fisioterapeutas.html" class="barra-nav__enlace">Fisioterapeutas</a></li>
+                <li><a href="perfil.html" class="barra-nav__enlace boton-nav">Mi Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="app-principal">
+            <div class="app-cabecera">
+                <a href="fisioterapeutas.html" class="boton-volver">←</a>
+                <h1 class="app-cabecera__titulo">Chat con tu fisioterapeuta</h1>
+            </div>
+
+            <!-- Perfil del fisioterapeuta -->
+            <div class="chat-perfil">
+                <img src="assets/images/robert.png" alt="Mario González" class="avatar">
+                <div>
+                    <div class="chat-perfil__nombre">Mario González</div>
+                    <div class="chat-perfil__rol">Fisioterapeuta</div>
+                    <div class="chat-perfil__estado">● En línea</div>
+                </div>
+            </div>
+
+            <div class="chat-fecha">Hoy</div>
+
+            <!-- Mensajes -->
+            <div class="chat-mensajes">
+                <div class="mensaje mensaje--otro">
+                    <img src="assets/images/robert.png" alt="" class="avatar" style="width:36px;height:36px">
+                    <div>
+                        <div class="mensaje__burbuja">Hola Juan, ¿Cómo te has sentido con tu recuperación?</div>
+                        <span class="mensaje__hora">10:31</span>
+                    </div>
+                </div>
+                <div class="mensaje mensaje--propio">
+                    <div>
+                        <div class="mensaje__burbuja">Hola María, he sentido menos dolor en la rodilla</div>
+                        <span class="mensaje__hora">10:32</span>
+                    </div>
+                </div>
+                <div class="mensaje mensaje--otro">
+                    <img src="assets/images/robert.png" alt="" class="avatar" style="width:36px;height:36px">
+                    <div>
+                        <div class="mensaje__burbuja">¡Excelente! Sigue con los ejercicios y recuerda estirar bien después de cada sesión</div>
+                        <span class="mensaje__hora">10:35</span>
+                    </div>
+                </div>
+                <div class="mensaje mensaje--propio">
+                    <div>
+                        <div class="mensaje__burbuja">Perfecto, gracias por el apoyo</div>
+                        <span class="mensaje__hora">10:37</span>
+                    </div>
+                </div>
+                <div class="mensaje mensaje--otro">
+                    <img src="assets/images/robert.png" alt="" class="avatar" style="width:36px;height:36px">
+                    <div>
+                        <div class="mensaje__burbuja">Cualquier duda aquí estoy</div>
+                        <span class="mensaje__hora">10:37</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input -->
+            <div class="chat-input">
+                <input type="text" placeholder="Escribe un mensaje" id="msgInput">
+                <button class="chat-input__boton" id="botonEnviar" disabled style="opacity:0.6;cursor:not-allowed;">➤</button>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-inferior">
+        <ul class="nav-inferior__lista">
+            <li><a href="javascript:history.back()" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">←</span><span>Atrás</span>
+            </a></li>
+            <li><a href="inicio-app.html" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">🏠</span><span>Inicio</span>
+            </a></li>
+            <li><a href="#" class="nav-inferior__enlace">
+                <span class="nav-inferior__icono">☰</span><span>Menú</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <footer class="pie-marca">@2026 SportRecover</footer>
+    <script src="assets/scripts/main.js"></script>
+    <script>
+        const input = document.getElementById('msgInput');
+        const boton = document.getElementById('botonEnviar');
+        const contenedor = document.querySelector('.chat-mensajes');
+
+        // Habilitar o deshabilitar el botón según haya texto en el input
+        input.addEventListener('input', () => {
+            const activo = input.value.trim() !== '';
+            boton.disabled = !activo;
+            boton.style.opacity = activo ? '1' : '0.6';
+            boton.style.cursor = activo ? 'pointer' : 'not-allowed';
+        });
+
+        // Enviar con clic en el botón
+        boton.addEventListener('click', enviarMensaje);
+
+        // Enviar con la tecla Enter
+        input.addEventListener('keydown', e => {
+            if (e.key === 'Enter') enviarMensaje();
+        });
+
+        function enviarMensaje() {
+            const texto = input.value.trim();
+            if (!texto) return;
+
+            const hora = new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+            agregarMensaje('propio', texto, hora);
+
+            input.value = '';
+            input.dispatchEvent(new Event('input'));
+
+            setTimeout(() => {
+                procesarRespuesta(texto);
+            }, 800);
+        }
+
+        function agregarMensaje(tipo, texto, hora) {
+            const div = document.createElement('div');
+            if (tipo === 'propio') {
+                div.className = 'mensaje mensaje--propio';
+                div.innerHTML = `<div><div class="mensaje__burbuja">${texto}</div><span class="mensaje__hora">${hora}</span></div>`;
+            } else {
+                div.className = 'mensaje mensaje--otro';
+                div.innerHTML = `<img src="assets/images/robert.png" alt="" class="avatar" style="width:36px;height:36px"><div><div class="mensaje__burbuja">${texto}</div><span class="mensaje__hora">${hora}</span></div>`;
+            }
+            contenedor.appendChild(div);
+            div.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function procesarRespuesta(texto) {
+            const msg = texto.toLowerCase();
+            const hora = new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+            let respuesta;
+
+            if (msg.includes('hola') || msg.includes('buenas') || msg.includes('buenos días') || msg.includes('buenas tardes')) {
+                respuesta = '¡Hola! Me alegra saber de ti. ¿Cómo te has sentido con tu recuperación?';
+            } else if (msg.includes('dolor') || msg.includes('duele') || msg.includes('molestia')) {
+                respuesta = 'Entiendo que sientes dolor. ¿Puedes describir en qué zona y con qué intensidad del 1 al 10?';
+            } else if (msg.includes('mejor') || msg.includes('mejorando') || msg.includes('bien')) {
+                respuesta = '¡Qué buenas noticias! Sigue así, la constancia es fundamental en la recuperación.';
+            } else if (msg.includes('ejercicio') || msg.includes('rutina') || msg.includes('sesión') || msg.includes('sesion')) {
+                respuesta = 'Recuerda hacer los ejercicios con calma y sin forzar. ¿Estás siguiendo la rutina asignada sin problemas?';
+            } else if (msg.includes('cita') || msg.includes('turno') || msg.includes('horario')) {
+                respuesta = 'Para coordinar una cita puedes revisar el calendario en la app. ¿Qué horario te vendría mejor?';
+            } else if (msg.includes('gracias')) {
+                respuesta = '¡Con gusto! Estoy aquí para apoyarte en tu recuperación. Cualquier duda, me avisas.';
+            } else {
+                respuesta = 'Entendido. Recuerda que estoy aquí para guiarte. ¿Hay algo específico en lo que pueda ayudarte hoy?';
+            }
+
+            agregarMensaje('otro', respuesta, hora);
+        }
+    </script>
+</body>
+</html>
